@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: lightslategray;
+  color: white;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover,
+.menu a:focus,
+.menu .active > a {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #444;
+  display: none;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 1000;
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.menu li:hover .dropdown,
+.menu li:focus-within .dropdown {
+  display: flex;
+}
+
+.dropdown a {
+  padding: 0.5rem 1rem;
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-form input {
+  padding: 0.3rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-form button {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background-color: #555;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+}
+
+@media (max-width: 992px) {
+  .nav-container {
+    flex-wrap: wrap;
+  }
+  .menu,
+  .search-form {
+    flex-basis: 100%;
+    display: none;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .menu.open,
+  .search-form.open {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .menu a {
+    padding: 1rem;
+  }
+}
+.logo img {
+  height: 100px; 
+}
